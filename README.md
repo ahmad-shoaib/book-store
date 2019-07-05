@@ -14,16 +14,16 @@ box.
 4. If there is any text in the text field, tapping on the search button should take you to Full
 Results Page
 
-#Tools And Technologies Used
+# Tools And Technologies Used
 This Application has been developed by using React, Redux, Ant Design, react-infinite-loader, lodash and many other exciting technologies for frontend.
 
 For Backend Express is used for API calls.
 
-#APIs Used
+# APIs Used
 Third party API from GoodReads were utilized
 https://www.goodreads.com/api
 
-#Usage
+# Usage
 Download or clone the project. 
 Project has two parts: 
 (a) server-book-store [Server/API] 
