@@ -22,3 +22,10 @@ For Backend Express is used for API calls.
 #APIs Used
 Third party API from GoodReads were utilized
 https://www.goodreads.com/api
+
+#Usage
+Download or clone the project. 
+Project has two parts: 
+(a) server-book-store [Server/API] 
+(b) book-store [Frontend]
+Download the dependencies for both by using npm or yarn.
