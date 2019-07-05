@@ -1,0 +1,67 @@
+.searchBar{
+    width: 400px;
+    margin: 40px auto !important;
+}
+.searched-result{
+  position: relative;
+  max-width: 400px;
+  height: 32px;
+  padding: 5px;
+  border: 1px solid #d9d9d9;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.app-logo {
+    margin: 0px 24px 16px 0 !important;
+    float: left !important;
+    font-size: 16px !important;
+    font-weight: 800;
+    color: #489460 !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    text-transform: uppercase;
+  }
+
+  .layout {
+    min-height: 100vh;
+  }
+
+  .written-by{
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    color: #489460 !important;
+  }
+
+  .btn-results-found{
+    width: 100%;
+    margin-top: 20px;
+    font-size: 12px;
+  }
+
+  .align-details{
+    text-align: -webkit-center;
+  }
+  .align-discription{
+    text-align: justify;
+  }
+  .align-reviews{
+    text-align: -webkit-center;
+    overflow: auto;
+  }
+
+  .book-name{
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .book-author{
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+
+  .publish-date{
+    font-size: 14px;
+    font-family: Georgia, 'Times New Roman', Times, serif
+  }
