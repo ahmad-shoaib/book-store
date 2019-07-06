@@ -29,3 +29,6 @@ Project has two parts:
 (a) server-book-store [Server/API] 
 (b) book-store [Frontend]
 Download the dependencies for both by using npm or yarn.
+
+# CORS
+Enable Cross Origin Resource Sharing for APIs to work and in order to avoud CORS exceptions.
