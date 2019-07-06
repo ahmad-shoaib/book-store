@@ -5,14 +5,8 @@ import 'antd/dist/antd.css';
 import './../assets/css/index.css'
 import { fetchBookDetails } from "../redux/actions/index"
 import { isEqual } from 'lodash';
-import { PageHeader, Layout, Rate, Row, Col } from 'antd';
+import { PageHeader, Rate } from 'antd';
 
-
-const data = [
-    'Racing car sprays burning fuel into crowd burning fuel into crowd.',
-    'Man charged over missing wedding girl.',
-    'Los Angeles battles huge wildfires.',
-];
 
 class BookDetailPage extends React.Component {
     constructor() {
@@ -32,9 +26,7 @@ class BookDetailPage extends React.Component {
         document.title = `detail of book '${localStorage.getItem("book")}'`
     }
     componentDidUpdate(prevProps, prevState) {
-        // only update chart if the data has changed
         if (!isEqual(prevProps.bookStore.book, this.props.bookStore.book) && this.props.bookStore.book) {
-            console.log(this.props.bookStore);
             this.setState({
                 authorName: this.props.bookStore.book.authorName,
                 averageRating: this.props.bookStore.book.averageRating,
@@ -44,14 +36,9 @@ class BookDetailPage extends React.Component {
                 publicationDate: this.props.bookStore.book.publicationDate,
                 reviewsWidget: this.props.bookStore.book.reviewsWidget
             })
-            // console.log(document.getElementById('description').innerHTML )
-            // document.getElementById('description').innerHTML = this.props.bookStore.book.description;
-            // document.getElementById('reviewsWidget').innerHTML = this.props.bookStore.book.reviewsWidget;
         }
     }
     render() {
-        console.log(data)
-        const { Header, Content, Footer } = Layout;
         const { authorName, averageRating, description, imageUrl, name, publicationDate, reviewsWidget } = this.state;
         function createDiscriptionMarkup() {
             return {
@@ -76,10 +63,10 @@ class BookDetailPage extends React.Component {
                                 <div className="publish-date">{publicationDate}</div>
                             </div>
                             <div className="align-details">
-                                <img src={imageUrl} />
+                                <img src={imageUrl} alt={name}/>
                             </div>
                             <div className="align-details">
-                            <Rate allowHalf defaultValue={averageRating} />
+                            <Rate allowHalf defaultValue={parseInt(averageRating)} />
                             </div>
                             <div dangerouslySetInnerHTML={createDiscriptionMarkup()} className="align-discription"/>
                             <div dangerouslySetInnerHTML={createReviewsWidgetMarkup()} className="align-reviews"/>

@@ -2,7 +2,6 @@ import ActionTypes from './../constants/index';
 
 const bookstore = (state = {}, action) => {
   const { type, payload } = action;
-  console.log(type, payload)
   switch (type) {
     case ActionTypes.HIDE_SUGGESTION: {
       const { showSuggestions } = payload;

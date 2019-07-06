@@ -1,19 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { withRouter } from "react-router-dom";
-import { Icon, Button, Input, AutoComplete } from 'antd';
+import { Input } from 'antd';
 import 'antd/dist/antd.css';
 import './../assets/css/index.css'
-import { Debounce } from 'react-throttle';
 import { connect } from "react-redux"
 import { isEqual } from 'lodash';
 import { fetchBooks, fetchingEmptyQuery } from "../redux/actions/index"
 import InfiniteLoader from 'react-infinite-loader'
-
-
-const { Search } = Input;
-
-const { Option } = AutoComplete;
-
 
 function searchResult(self) {
     self.props.fetchBooks(self.state.query, self.state.page);
@@ -40,7 +33,6 @@ class FullResultPage extends React.Component {
     }
 
     handle_fetchDetail = (id, book) => {
-        console.log(id, book)
         localStorage.setItem("book", book);
         this.props.history.replace(`BookDetail/${id}`);
     }
@@ -56,14 +48,7 @@ class FullResultPage extends React.Component {
     };
 
     render() {
-
         const { dataSource, query } = this.state;
-        dataSource.map(data => {
-            console.log(data.id, data.author, data.book)
-        });
-        console.log(dataSource)
-
-
         return (
             <div className="searchBar">
                 <Input placeholder="Basic usage" value={query} disabled/>

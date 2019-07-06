@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { withRouter } from "react-router-dom";
-import { Icon, Button, Input, AutoComplete } from 'antd';
+import { Button, Input } from 'antd';
 import 'antd/dist/antd.css';
 import './../assets/css/index.css'
 import { Debounce } from 'react-throttle';
@@ -10,10 +10,8 @@ import { fetchBooks, fetchingEmptyQuery } from "../redux/actions/index"
 
 const { Search } = Input;
 
-const { Option } = AutoComplete;
 
-
-function searchResult(query, self) {//Here
+function searchResult(query, self) {
     if (query.length > 0)
         self.props.fetchBooks(query, 1);
     else {
@@ -32,33 +30,23 @@ class CustomSearchBox extends React.Component {
         query: '',
         foundResults: 0
     };
-    componentDidMount() {
-        console.log(this.props)
-    }
     componentDidUpdate(prevProps, prevState) {
-        // only update chart if the data has changed
         if (!isEqual(prevProps.bookStore.books, this.props.bookStore.books)) {
-            //console.log(this.props, this.props.books);
             if (this.props.bookStore.books.length <= 5) {
                 if (this.props.bookStore.books.length === 0) {
                     this.setState({ dataSource: [], foundResults: 0 })
                     return
                 }
-                //console.log("this.props.books.length <= 5 ---- ", this.props.bookStore)
                 this.setState({ dataSource: this.props.bookStore.books, foundResults: this.props.bookStore.totalResults })
             }
             else {
-                //console.log("else ---- ", this.props.bookStore.books)
                 let obj = new Array(...this.props.bookStore.books.slice(0, 5));
-                //console.log(obj)
-                //console.log(this.props.bookStore.totalResults)
                 this.setState({ dataSource: obj, foundResults: this.props.bookStore.totalResults })
             }
         }
     }
 
     handle_fetchDetail = (id, book) => {
-        console.log(id, book)
         localStorage.setItem("book", book);
         this.props.history.push(`BookDetail/${id}`);
     }
@@ -79,10 +67,6 @@ class CustomSearchBox extends React.Component {
 
     render() {
         const { dataSource, foundResults } = this.state;
-        dataSource.map(data => {
-            console.log(data.id, data.author, data.book)
-        });
-        console.log(dataSource)
         return (
             <Fragment>
                 <div className="searchBar">

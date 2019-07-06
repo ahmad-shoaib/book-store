@@ -21,7 +21,6 @@ export function fetchBooks(queryText, page) {
 				})
 		}
 		else {
-			console.log("Here")
 			dispatch({ type: constants.FETCH_BOOKS_SUCCESS, payload: { books:[], totalResults:0, page:1 } });
 		}
 
@@ -48,7 +47,6 @@ export function fetchBookDetails(id) {
 	}
 }
 export function fetchingEmptyQuery(){
-	console.log("HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
 	return function (dispatch) {
 	dispatch({type: "EMPTY_QUERY",payload: { books: [],queryText:""}})
 	}
