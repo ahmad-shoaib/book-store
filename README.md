@@ -31,4 +31,4 @@ Project has two parts:
 Download the dependencies for both by using npm or yarn.
 
 # CORS
-Enable Cross Origin Resource Sharing for APIs to work and in order to avoud CORS exceptions.
+Enable Cross Origin Resource Sharing for APIs to work and in order to avoid CORS exceptions.
