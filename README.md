@@ -19,7 +19,7 @@ This Application has been developed by using React, Redux, Ant Design, react-inf
 
 For Backend Express is used for API calls.
 
-# APIs Used
+# API Used
 Third party API from GoodReads were utilized
 https://www.goodreads.com/api
 
